@@ -1,8 +1,3 @@
-Assignment 2
-Date: 12/03/2023
-Subject: B636: Genomic Data Analytics and Precision Medicine
-
-
 Unix Commands used:
 
 ###### download SRA files ###### SRA TOOLKIT
@@ -124,3 +119,17 @@ miRNA_output_file="$output_folder/all_samples_miRNA_count.txt"
 featureCounts -a "$miRNA_gff_file" -t miRNA,miRNA_primary_transcript -g 'Name' -o "$miRNA_output_file" "${bam_folder}"/*.bam
 
 ##################Moving the files to the local directory for further downstream analysis in R (DEseq2) #######################
+
+I used DEseq2 to perform differentially expressed genes in the attached R code. 
+- Drop columns ("Chr", "Start", "End", "Strand", "Length") from the counts' files obtained from feature counts
+- Change the first column to row names
+- Combine both the datasets without losing row/column values
+- filter the data frame by summing the counts across each and dropping rows(genes) with less than 1 count.
+- Create DEseq dataset from the matrix using the meta data from the study
+- Run DEseq Analysis
+- Sort the adjusted p-values in ascending order
+- Gene with less than 0.05 adjusted p_value are selected as Differentially expressed genes
+
+
+
+
