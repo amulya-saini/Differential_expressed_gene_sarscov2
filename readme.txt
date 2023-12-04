@@ -131,5 +131,12 @@ I used DEseq2 to perform differentially expressed genes in the attached R code.
 - Gene with less than 0.05 adjusted p_value are selected as Differentially expressed genes
 
 
+- I have used Human reference genome version 38 (hg38), both fasta file and gtf file were downloaded from the following website(illumina):
+wget http://igenomes.illumina.com.s3-website-us-east-1.amazonaws.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz
+
+- I have downloaded the miRNA annotation gff3 file from the following website (miRBase):
+https://mirbase.org/download/hsa.gff3
+
+
 
 
